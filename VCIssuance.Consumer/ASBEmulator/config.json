@@ -1,0 +1,18 @@
+{
+  "UserConfig": {
+    "Namespaces": [
+      {
+        "Name": "sbemulatorns",
+        "Queues": [
+        ],
+        "Topics": [
+        ]
+      }
+    ],
+    "Logging": {
+      "Level": "Information",
+      "Type": "Console"
+      // Supported types are "Console" and "File"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "VCIssuance.Consumer": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7105",
+      "launchBrowser": false
+    }
+  }
+}
