@@ -4,6 +4,7 @@
       {
         "Name": "sbemulatorns",
         "Queues": [
+          { "Name": "vc-issuance-requests-queue" }
         ],
         "Topics": [
         ]
