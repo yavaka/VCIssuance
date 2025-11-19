@@ -13,6 +13,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VCIssuance.Core", "VCIssuan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VCIssuance.Consumer", "VCIssuance.Consumer\VCIssuance.Consumer.csproj", "{A95501DC-A7B3-4BED-A76C-A6A6E9D1C8DF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASBEmulator", "ASBEmulator", "{6F009EF4-546E-4970-B930-455BCA8FEF92}"
+	ProjectSection(SolutionItems) = preProject
+		ASBEmulator\.env = ASBEmulator\.env
+		ASBEmulator\config.json = ASBEmulator\config.json
+		ASBEmulator\docker-compose.yaml = ASBEmulator\docker-compose.yaml
+		ASBEmulator\README.md = ASBEmulator\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VCIssuance.DLQListener", "VCIssuance.DLQListener\VCIssuance.DLQListener.csproj", "{064D8898-35D0-461F-9572-8D5E6DB8C2D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +41,10 @@ Global
 		{A95501DC-A7B3-4BED-A76C-A6A6E9D1C8DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A95501DC-A7B3-4BED-A76C-A6A6E9D1C8DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A95501DC-A7B3-4BED-A76C-A6A6E9D1C8DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{064D8898-35D0-461F-9572-8D5E6DB8C2D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{064D8898-35D0-461F-9572-8D5E6DB8C2D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{064D8898-35D0-461F-9572-8D5E6DB8C2D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{064D8898-35D0-461F-9572-8D5E6DB8C2D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +53,8 @@ Global
 		{232D5173-E8F6-41F4-AECA-0E4EA51A000C} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{514E000E-B09E-495F-8991-787B14618445} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{A95501DC-A7B3-4BED-A76C-A6A6E9D1C8DF} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{6F009EF4-546E-4970-B930-455BCA8FEF92} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{064D8898-35D0-461F-9572-8D5E6DB8C2D8} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {78955384-1B9C-4A8F-95B0-6A2915E16563}

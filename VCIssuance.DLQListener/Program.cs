@@ -1,10 +1,7 @@
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Builder;
-using Microsoft.Extensions.Azure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using VCIssuance.Consumer.Logic;
-using VCIssuance.Core.Constants;
 
 var builder = FunctionsApplication.CreateBuilder(args);
 
@@ -13,12 +10,5 @@ builder.ConfigureFunctionsWebApplication();
 builder.Services
     .AddApplicationInsightsTelemetryWorkerService()
     .ConfigureFunctionsApplicationInsights();
-
-builder.Services.AddAzureClients(clientBuilder =>
-{
-    clientBuilder.AddServiceBusClient(builder.Configuration[ConnectionNames.AzureServiceBus]?.ToString() ?? throw new InvalidOperationException($"{ConnectionNames.AzureServiceBus} is not set."));
-});
-
-builder.Services.AddSingleton<VCIssuanceWorkflow>();
 
 builder.Build().Run();

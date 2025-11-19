@@ -1,0 +1,32 @@
+{
+  "UserConfig": {
+    "Namespaces": [
+      {
+        "Name": "sbemulatorns",
+        "Queues": [
+          {
+            "Name": "vc-issuance-requests-queue",
+            "MaxDeliveryCount": 3,
+            "LockDurationInSeconds": 30,
+            "DeadLetteringOnMessageExpiration": true
+          },
+          { "Name": "vc-issuance-requests-queue-poison" }
+        ],
+        "Topics": [
+          {
+            "Name": "vc-issuance-audit-topic",
+            "Subscriptions": [
+              { "Name": "reporting-db-sub" },
+              { "Name": "notifier-sub" }
+            ]
+          }
+        ]
+      }
+    ],
+    "Logging": {
+      "Level": "Information",
+      "Type": "Console"
+      // Supported types are "Console" and "File"
+    }
+  }
+}
