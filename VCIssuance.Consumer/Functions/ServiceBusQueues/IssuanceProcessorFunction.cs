@@ -51,7 +51,11 @@ public class IssuanceProcessorFunction(
             var auditMessage = new ServiceBusMessage(message.Body)
             {
                 Subject = "VCCreated",
-                CorrelationId = message.MessageId
+                CorrelationId = message.MessageId,
+                ApplicationProperties =
+                {
+                    { "vc_type", request.VCType },
+                }
             };
             await sender.SendMessageAsync(auditMessage);
             
