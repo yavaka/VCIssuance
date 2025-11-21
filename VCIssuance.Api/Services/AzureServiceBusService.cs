@@ -16,7 +16,10 @@ public class AzureServiceBusService(ServiceBusClient serviceBusClient) : IMessag
 
         var messageBody = JsonSerializer.Serialize(payload);
 
-        var message = new ServiceBusMessage(messageBody);
+        var message = new ServiceBusMessage(messageBody) 
+        {
+            SessionId = payload.RecipientIdentifier,
+        };
 
         await sender.SendMessageAsync(message);
     }

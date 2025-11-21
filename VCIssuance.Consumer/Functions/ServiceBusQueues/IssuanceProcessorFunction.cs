@@ -19,7 +19,10 @@ public class IssuanceProcessorFunction(
 
     [Function(nameof(IssuanceProcessorFunction))]
     public async Task Run(
-        [ServiceBusTrigger(QueueNames.IssuanceRequests, Connection = ConnectionNames.AzureServiceBus)]
+        [ServiceBusTrigger(
+            QueueNames.IssuanceRequests, 
+            Connection = ConnectionNames.AzureServiceBus, 
+            IsSessionsEnabled = true)] // FIFO processing per user
         ServiceBusReceivedMessage message,
         ServiceBusMessageActions actions)
     {

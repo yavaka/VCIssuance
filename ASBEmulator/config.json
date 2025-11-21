@@ -6,18 +6,27 @@
         "Queues": [
           {
             "Name": "vc-issuance-requests-queue",
-            "MaxDeliveryCount": 3,
-            "LockDurationInSeconds": 30,
-            "DeadLetteringOnMessageExpiration": true
+            "Properties": {
+              "RequiresSession": true,
+              "MaxDeliveryCount": 3,
+              "LockDurationInSeconds": 30,
+              "DeadLetteringOnMessageExpiration": true
+            }
           },
-          { "Name": "vc-issuance-requests-queue-poison" }
+          {
+            "Name": "vc-issuance-requests-queue-poison"
+          }
         ],
         "Topics": [
           {
             "Name": "vc-issuance-audit-topic",
             "Subscriptions": [
-              { "Name": "reporting-db-sub" },
-              { "Name": "notifier-sub" }
+              {
+                "Name": "reporting-db-sub"
+              },
+              {
+                "Name": "notifier-sub"
+              }
             ]
           }
         ]

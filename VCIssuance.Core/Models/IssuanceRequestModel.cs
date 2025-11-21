@@ -3,7 +3,7 @@
 public class IssuanceRequestModel
 {
     /// <summary>
-    /// The unique identifier for the user 
+    /// The unique identifier for the user. Serves as the Queue session identifier.
     /// </summary>
     public required string RecipientIdentifier { get; set; }
 
