@@ -1,21 +1,17 @@
 ﻿namespace VCIssuance.Core.Models;
 
-public class IssuanceRequestModel
+public class RevalidationScheduleModel
 {
     /// <summary>
-    /// The unique identifier for the user. Serves as the Queue session identifier.
+    /// The unique identifier for the user.
     /// </summary>
     public required string RecipientIdentifier { get; set; }
-
     /// <summary>
     /// The type of credential being requested (Employee, Financial, etc.)
     /// </summary>
     public required string VCType { get; set; }
-
-    public DateTime ExpirationDateUtc => DateTime.UtcNow;
-
     /// <summary>
-    /// Optional: Any specific data needed for the VC content
+    /// Expiration date and time in (UTC).
     /// </summary>
-    public Dictionary<string, object> ClaimData { get; set; } = [];
+    public required DateTime ExpirationDateUtc { get; set; }
 }

@@ -14,7 +14,12 @@
             }
           },
           {
-            "Name": "vc-issuance-requests-queue-poison"
+            "Name": "vc-revalidation-queue",
+            "Properties": {
+              "MaxDeliveryCount": 3,
+              "LockDurationInSeconds": 30,
+              "DeadLetteringOnMessageExpiration": true
+            }
           }
         ],
         "Topics": [

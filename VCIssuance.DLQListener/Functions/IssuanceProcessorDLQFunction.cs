@@ -5,15 +5,13 @@ using VCIssuance.Core.Constants;
 
 namespace VCIssuance.DLQListener.Functions;
 
-public class IssuanceProcessorDLQFunction(
-    ILogger<IssuanceProcessorDLQFunction> logger)
+public class IssuanceProcessorDLQFunction(ILogger<IssuanceProcessorDLQFunction> logger)
 {
     private readonly ILogger<IssuanceProcessorDLQFunction> _logger = logger;
 
     [Function(nameof(IssuanceProcessorDLQFunction))]
     public void Run(
-        [ServiceBusTrigger(QueueNames.IssuanceRequestsDLQ, Connection = "AzureServiceBus:ConnectionString")]
-        ServiceBusMessageActions actions,
+        [ServiceBusTrigger(QueueNames.IssuanceRequestsDLQ, Connection = ConnectionNames.AzureServiceBus)]
         ServiceBusReceivedMessage message)
     {
         this._logger.LogCritical("{FunctionName}: DLQ Listener triggered for message: '{MessageId}'", nameof(IssuanceProcessorDLQFunction), message.MessageId);

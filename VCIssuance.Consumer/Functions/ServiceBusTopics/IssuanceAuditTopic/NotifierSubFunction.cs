@@ -1,7 +1,6 @@
 using Azure.Messaging.ServiceBus;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
-using System.Threading.Tasks;
 using VCIssuance.Core.Constants;
 
 namespace VCIssuance.Consumer.Functions.ServiceBusTopics.IssuanceAuditTopic;
